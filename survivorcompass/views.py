@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 from django.http import HttpResponse
 
 def index(request):
@@ -9,11 +8,10 @@ def adios(request):
     return HttpResponse("Adiós")
 
 def mostrarhtml(request):
-    minombre = 'Jesús García'
+    lista_cursos = Curso.objects.all()
     contexto = {
-        "minombre": 'Pepe'
+        "lista_cursos": lista_cursos
     }
-    return render(request, "prueba.html", contexto)
+    return render(request, "cursos.html", contexto)
 
-# Esto es un cambio
-# Cambio número 2
+#Esto es un cambio
