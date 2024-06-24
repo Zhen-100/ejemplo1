@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
 from django.http import HttpResponse
-
 from survivorcompass.models import Curso
 
 def index(request):
