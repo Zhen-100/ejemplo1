@@ -14,4 +14,3 @@ def mostrarhtml(request):
     }
     return render(request, "cursos.html", contexto)
 
-#Esto es un cambio
