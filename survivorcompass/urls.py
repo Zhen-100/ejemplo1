@@ -7,4 +7,3 @@ urlpatterns = [
     path("adios", views.adios, name="adios"),
     path("mostrarhtml", views.mostrarhtml, name="mostrarhtml")
 ]
-
