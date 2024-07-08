@@ -1,7 +1,8 @@
 from django.shortcuts import render
-
 from django.http import HttpResponse
-from survivorcompass.models import Curso
+
+from .models import Curso
+from .models import Asignatura
 
 def index(request):
     return HttpResponse("Hola")
@@ -14,7 +15,13 @@ def mostrarhtml(request):
     contexto = {
         "lista_cursos": lista_cursos
     }
-    return render (request, "cursos.htmnl", contexto)
+    return render(request, "cursos.html", contexto)
 
-
-# Esto es un cambio
+def lista_de_asignaturas(request):
+    lista_asignaturas = Asignatura.objects.all()
+    contexto = {
+        "lista_asignaturas": lista_asignaturas,
+        "equipos_de_futbol": ["Real Madrid", "Atlético de Madrid", "Barcelona"],
+        "mi_nombre": "Jesús García"
+    }
+    return render(request, "asignaturas.html", contexto)
